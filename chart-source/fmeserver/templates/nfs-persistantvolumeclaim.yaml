@@ -4,11 +4,11 @@ metadata:
   labels:
     safe.k8s.fmeserver.build: {{ .Values.fmeserver.buildNr }}
     safe.k8s.fmeserver.component: misc
-  name: fmeserver-data-{{ .Values.fmeserver.buildNr }}
+  name: fmeserver-nfs-{{ .Values.fmeserver.buildNr }}
 spec:
   accessModes:
   - ReadWriteOnce
   storageClassName: {{.Values.storage.class}}
   resources:
     requests:
-      storage: {{.Values.storage.fmeserver.size}}
+      storage: {{.Values.storage.nfs.size}}

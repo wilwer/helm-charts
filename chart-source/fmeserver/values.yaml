@@ -5,12 +5,15 @@ deployment:
   hostname: localhost
 
 storage:
+  class: hostpath
+  nfs: true
   database:
-    class: hostpath
     size: 1Gi
   fmeserver:
-    class: hostpath
     size: 10Gi
+  nfs:
+    size: 50Gi
+    serverIP: 10.96.96.96
 
 images:
   # Supported values: Always or IfNotPresent
